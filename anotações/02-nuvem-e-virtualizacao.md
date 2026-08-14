@@ -1,4 +1,4 @@
-# Módulo 2 — Nuvem e Virtualização
+# Módulo 2 - Nuvem e Virtualização
 
 ## Tipos de nuvem
 
@@ -8,6 +8,15 @@ Existem quatro modelos principais de nuvem:
 - **Privada**: voltada para uma entidade ou empresa específica; pode ser mantida internamente ou gerenciada por terceiros com segurança de acesso estrita.
 - **Híbrida**: combina duas ou mais nuvens (ex: parte privada, parte pública) conectadas por uma arquitetura única, com níveis de acesso diferentes por usuário.
 - **Comunitária**: criada para uso exclusivo de uma comunidade específica, com necessidades funcionais personalizadas (ex: setor de saúde, que precisa seguir HIPAA).
+
+## Serviços em nuvem
+
+Além dos modelos de nuvem, existem os modelos de serviço, que definem o que é entregue ao usuário:
+
+- **SaaS (Software como Serviço)**: o software é entregue pronto para uso via internet (ex: Gmail, Netflix). O usuário não gerencia infraestrutura nem instala nada.
+- **PaaS (Plataforma como Serviço)**: fornece um ambiente para desenvolver, testar e implantar aplicações, sem precisar gerenciar servidores ou infraestrutura (ex: Heroku, Google App Engine).
+- **IaaS (Infraestrutura como Serviço)**: fornece recursos de infraestrutura virtualizados (servidores, armazenamento, rede), e o usuário gerencia o sistema operacional e aplicações por cima (ex: AWS EC2, Azure VMs).
+- **DaaS (Desktop como Serviço)**: fornece uma área de trabalho virtual completa hospedada na nuvem, acessível remotamente de qualquer dispositivo (ex: Amazon WorkSpaces, Windows 365).
 
 ## Servidores dedicados vs. virtualização
 
