@@ -7,6 +7,21 @@ Endereços IPv4 são armazenados em binário (32 bits, divididos em 4 octetos de
 **Conversão decimal → binário:** usa a tabela de valores posicionais (128, 64, 32, 16, 8, 4, 2, 1). Pra cada posição, verifica se o número do octeto é maior ou igual ao valor. Se sim, marca 1 e subtrai; se não, marca 0 e passa pra próxima.
 
 Exemplo: 192 → 11000000 (128+64)
+### Exemplo: convertendo 192 para binário
+
+| 128 | 64 | 32 | 16 | 8 | 4 | 2 | 1 |
+|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+| 1   | 1  | 0  | 0  | 0 | 0 | 0 | 0 |
+
+**192 = 128 + 64 → binário: 11000000**
+
+### Exemplo: convertendo 168 para binário
+
+| 128 | 64 | 32 | 16 | 8 | 4 | 2 | 1 |
+|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+| 1   | 0  | 1  | 0  | 0 | 0 | 0 | 0 |
+
+**168 = 128 + 32 → binário: 10101000**
 
 ## Hexadecimal e IPv6
 
