@@ -11,6 +11,29 @@ A camada de rede (Camada 3 do modelo OSI) permite que dispositivos finais troque
 - **Roteamento**: roteadores escolhem o melhor caminho para levar o pacote até o destino. Cada roteador atravessado é um salto.
 - **Desencapsulamento**: quando o pacote chega ao destino, o cabeçalho IP é removido e os dados seguem para a camada de transporte.
 
+## Encapsulamento na pilha de protocolos
+
+Quando os dados saem da aplicação do usuário e descem pela pilha até serem transmitidos na rede, cada camada adiciona suas próprias informações de controle. Esse processo é chamado de encapsulamento, e a PDU (unidade de dados de protocolo) recebe um nome diferente em cada camada.
+
+### Ordem de encapsulamento
+
+1. **Dados**: informação criada na camada de aplicação (HTTP, e-mail, arquivo etc).
+2. **Segmento**: a camada de transporte adiciona o cabeçalho TCP ou UDP, incluindo as portas de origem e destino.
+3. **Pacote**: a camada de rede adiciona o cabeçalho IP, com os endereços lógicos de origem e destino.
+4. **Quadro**: a camada de enlace de dados adiciona cabeçalho e trailer, incluindo os endereços MAC de origem e destino.
+5. **Bits**: a camada física converte o quadro em sinais elétricos, ópticos ou de rádio para transmissão no meio físico.
+
+### Desencapsulamento
+
+No host de destino, o processo acontece ao contrário: cada camada remove o cabeçalho correspondente à medida que os dados sobem pela pilha, até chegar novamente como dados na camada de aplicação.
+
+### Resumo visual
+
+```
+Dados → Segmento → Pacote → Quadro → Bits
+(Aplicação) (Transporte) (Rede) (Enlace) (Física)
+```
+
 ## Encapsulamento IP
 
 O IP encapsula o segmento vindo da camada de transporte adicionando um cabeçalho IP, formando o pacote. Esse cabeçalho é examinado por roteadores ao longo do caminho, mas os dados da camada de transporte não mudam durante o trajeto (exceto quando há NAT no IPv4).
