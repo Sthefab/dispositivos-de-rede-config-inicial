@@ -29,7 +29,7 @@ Forma simplificada de representar a máscara de sub-rede, contando quantos bits 
 
 **Exemplo de notação:** `192.168.10.10/24` (equivale a `192.168.10.10 255.255.255.0`)
 
-## 🔢 AND Lógico — Como Descobrir o Endereço de Rede
+## 🔢 AND Lógico - Como Descobrir o Endereço de Rede
 Operação booleana bit a bit entre o **endereço IPv4** e a **máscara de sub-rede**:
 
 | A | B | A AND B |
@@ -52,7 +52,7 @@ Só resulta em `1` quando **ambos** os bits são `1`.
 
 O AND lógico entre o endereço do host e a máscara de sub-rede é o que revela **a qual rede aquele host pertence**.
 
-## 🌐 Notação CIDR — Prefixos Intermediários (VLSM)
+## 🌐 Notação CIDR - Prefixos Intermediários (VLSM)
 Além dos prefixos "fechados" (/8, /16, /24), o CIDR permite qualquer valor intermediário, dividindo a rede em blocos menores e mais flexíveis.
 
 | Máscara de Sub-Rede | Prefixo |
@@ -66,7 +66,7 @@ Além dos prefixos "fechados" (/8, /16, /24), o CIDR permite qualquer valor inte
 
 Repara que os valores de /25 a /30 (já listados acima) seguem a mesma lógica, só que no **último** octeto em vez do terceiro.
 
-## 🧮 Método do Bloco — Descobrindo o Endereço de Rede sem fazer AND bit a bit
+## 🧮 Método do Bloco - Descobrindo o Endereço de Rede sem fazer AND bit a bit
 Atalho pra encontrar o endereço de rede sem precisar converter tudo pra binário manualmente.
 
 **Passo 1:** Identifique em qual octeto o prefixo "cai"
