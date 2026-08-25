@@ -35,11 +35,13 @@ Forma simplificada de representar a máscara de sub-rede, contando quantos bits 
 ## 🔢 AND Lógico — Como Descobrir o Endereço de Rede
 
 Operação booleana bit a bit entre o **endereço IPv4** e a **máscara de sub-rede**:
-1 AND 1 = 1
-0 AND 1 = 0
-1 AND 0 = 0
-0 AND 0 = 0
 
+| A | B | A AND B |
+|---|---|---|
+| 1 | 1 | 1 |
+| 0 | 1 | 0 |
+| 1 | 0 | 0 |
+| 0 | 0 | 0 |
 
 Só resulta em `1` quando **ambos** os bits são `1`.
 
