@@ -9,7 +9,7 @@ Se a rede usa IPv4, o ARP é o protocolo que mapeia endereços IPv4 para endere�
 - **MAC de destino** - o do dispositivo de destino na mesma rede local. Se o destino estiver em outra rede, o MAC usado é o do gateway padrão (roteador).
 - **MAC de origem** - o da NIC Ethernet do host que envia.
 
-Pra mandar um pacote a outro host na mesma rede IPv4, o dispositivo precisa saber o IPv4 e o MAC do destino. O IPv4 já é conhecido ou resolvido pelo nome; o MAC precisa ser descoberto — é aí que entra o ARP.
+Pra mandar um pacote a outro host na mesma rede IPv4, o dispositivo precisa saber o IPv4 e o MAC do destino. O IPv4 já é conhecido ou resolvido pelo nome; o MAC precisa ser descoberto é aí que entra o ARP.
 
 **Duas funções principais do ARP:**
 - Resolver endereços IPv4 em endereços MAC
@@ -32,7 +32,7 @@ Enviada quando o dispositivo precisa do MAC de um IPv4 que não tem na tabela. �
 - **MAC de origem**: MAC de quem envia a requisição.
 - **Tipo**: `0x806` - indica à NIC que recebe que os dados devem ir pro processo ARP.
 
-Como é broadcast, o switch inunda a requisição em todas as portas (menos a de origem). Todo dispositivo da LAN recebe e processa pra ver se o IPv4 de destino bate com o dele. Roteadores não encaminham esse broadcast pra outras interfaces. Só o dispositivo dono do IPv4 responde — os outros ignoram.
+Como é broadcast, o switch inunda a requisição em todas as portas (menos a de origem). Todo dispositivo da LAN recebe e processa pra ver se o IPv4 de destino bate com o dele. Roteadores não encaminham esse broadcast pra outras interfaces. Só o dispositivo dono do IPv4 responde os outros ignoram.
 
 ## Resposta ARP
 
@@ -42,11 +42,11 @@ Só o dispositivo com o IPv4 de destino responde, em unicast:
 - **MAC de origem**: MAC de quem está respondendo.
 - **Tipo**: `0x806`.
 
-Só quem enviou a requisição recebe a resposta. Ao receber, grava o par IPv4/MAC na própria tabela ARP — daí em diante, pacotes pra esse IPv4 já saem encapsulados com o MAC certo.
+Só quem enviou a requisição recebe a resposta. Ao receber, grava o par IPv4/MAC na própria tabela ARP daí em diante, pacotes pra esse IPv4 já saem encapsulados com o MAC certo.
 
 Se ninguém responder, o pacote é descartado (não dá pra montar o quadro).
 
-As entradas da tabela têm timestamp e expiram se o dispositivo não receber nenhum quadro daquele IPv4/MAC antes do tempo acabar. Também é possível inserir entradas estáticas manualmente — essas não expiram sozinhas, só removendo na mão.
+As entradas da tabela têm timestamp e expiram se o dispositivo não receber nenhum quadro daquele IPv4/MAC antes do tempo acabar. Também é possível inserir entradas estáticas manualmente essas não expiram sozinhas, só removendo na mão.
 
 > **IPv6**: não usa ARP. Usa um processo parecido chamado **ICMPv6 Neighbour Discovery (ND)**, com mensagens de requisição e anúncio de vizinho equivalentes às requisições e respostas ARP do IPv4.
 
@@ -54,7 +54,7 @@ As entradas da tabela têm timestamp e expiram se o dispositivo não receber nen
 
 Quando o IPv4 de destino não está na mesma rede do IPv4 de origem, o dispositivo de origem manda o quadro pro **gateway padrão** (interface do roteador local), usando o MAC do gateway como MAC de destino.
 
-O IPv4 do gateway padrão fica salvo na configuração IPv4 do host. Ao montar um pacote, o host compara o IPv4 de destino com o próprio pra saber se estão na mesma rede de Camada 3. Se não estiverem, ele busca o MAC do gateway na tabela ARP — e se não tiver entrada, dispara o processo ARP normalmente.
+O IPv4 do gateway padrão fica salvo na configuração IPv4 do host. Ao montar um pacote, o host compara o IPv4 de destino com o próprio pra saber se estão na mesma rede de Camada 3. Se não estiverem, ele busca o MAC do gateway na tabela ARP e se não tiver entrada, dispara o processo ARP normalmente.
 
 ## Remoção de entradas da tabela ARP
 
@@ -100,4 +100,4 @@ Requisições ARP são broadcast, então todo dispositivo da rede local processa
 
 **Risco de segurança**: um agente de ameaça pode usar **falsificação de ARP** pra fazer um **ataque de envenenamento ARP (ARP poisoning)**. Ele responde a uma requisição ARP se passando por outro dispositivo (ex: o gateway padrão), enviando seu próprio MAC. A vítima grava esse MAC errado na tabela ARP e passa a mandar os pacotes pro atacante.
 
-**Mitigação**: switches de nível corporativo usam **inspeção dinâmica de ARP (DAI – Dynamic ARP Inspection)**.
+**Mitigação**: switches de nível corporativo usam **inspeção dinâmica de ARP (DAI - Dynamic ARP Inspection)**.
