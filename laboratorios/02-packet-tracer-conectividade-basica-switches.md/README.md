@@ -30,7 +30,7 @@ Todos os testes tiveram sucesso, com 0% de perda de pacote (alguns pings iniciai
 
 ## Resultado
 
-**Pontuação: 100/100** — 14/14 itens de avaliação corretos, cobrindo endereçamento IPv4, configuração de hostname e gerenciamento de configuração.
+**Pontuação: 100/100** - 14/14 itens de avaliação corretos, cobrindo endereçamento IPv4, configuração de hostname e gerenciamento de configuração.
 
 ## Aprendizados
 
