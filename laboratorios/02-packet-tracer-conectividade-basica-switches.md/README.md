@@ -1,4 +1,4 @@
-# Implementação de Conectividade Básica — Packet Tracer
+# Implementação de Conectividade Básica - Packet Tracer
 
 ## Sobre o lab
 
