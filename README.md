@@ -8,10 +8,10 @@ Curso introdutório voltado para o entendimento e a configuração básica de di
 
 ## Estrutura do repositório
 
-├── anotações/       Resumos e notas de estudo por tópico
-├── laboratorios/    Atividades práticas realizadas no Packet Tracer ou ambiente real
-└── certificado/     Certificado de conclusão do curso
-
+- **anotações/** — Resumos e notas de estudo por tópico
+- **laboratorios/** — Atividades práticas realizadas no Packet Tracer ou ambiente real
+- **certificado/** — Certificado de conclusão do curso
+- 
 ## Anotações
 
 Resumos organizados por tema, cobrindo os principais conceitos vistos ao longo do curso, como:
